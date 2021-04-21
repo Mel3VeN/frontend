@@ -1,10 +1,11 @@
 import GlobalStyle from './themes/globalStyles';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <h1>Guten Morgen, Name</h1>
+      <Dashboard />
     </div>
   );
 }
