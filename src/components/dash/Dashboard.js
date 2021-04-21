@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DailyWorkout from './DailyWorkout';
-import Navbar from './Navbar';
+import Navbar from '../nav/Navbar';
 
 const Title = styled.h1`
   max-width: 50px;

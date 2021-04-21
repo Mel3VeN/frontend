@@ -1,12 +1,19 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './themes/globalStyles';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/dash/Dashboard';
+import Browse from './components/browse/Browse';
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyle />
-      <Dashboard />
-    </div>
+    <Router>
+      <div className="App">
+        <GlobalStyle />
+        <Switch>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/browse" component={Browse} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
