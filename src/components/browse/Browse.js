@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ProgrammCard from './ProgrammCard';
 import Navbar from '../nav/Navbar';
+import Cardview from './Cardview';
 
 const Wrapper = styled.div`
   padding: 1rem;
@@ -12,7 +13,7 @@ function Browse() {
     <div>
       <Wrapper>
         <h2>Browse</h2>
-        <ProgrammCard />
+        <Cardview />
       </Wrapper>
       <Navbar />
     </div>
