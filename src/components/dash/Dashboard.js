@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DailyWorkout from './DailyWorkout';
 import Navbar from '../nav/Navbar';
+import dashData from '../../dummydata/dash-data';
 
 const Title = styled.h1`
   max-width: 50px;
@@ -18,7 +19,13 @@ function Dashboard() {
     <div className="Dashboard">
       <Wrapper>
         <Title>Guten Morgen, Name</Title>
-        <DailyWorkout />
+        <DailyWorkout
+          title={dashData[0].titleWorkout}
+          program={dashData[0].titleProgram}
+          kcal={dashData[0].kcal}
+          minutes={dashData[0].min}
+          type={dashData[0].type}
+        />
       </Wrapper>
       <Navbar />
     </div>

@@ -21,7 +21,7 @@ const WorkoutTitle = styled.p`
   font-size: 16px;
   line-height: 21px;
 `;
-function DailyWorkout() {
+function DailyWorkout({ title, program, kcal, minutes, type }) {
   return (
     <div>
       <Wrapper>
@@ -29,9 +29,11 @@ function DailyWorkout() {
         <Text>Trainingsplan</Text>
       </Wrapper>
       <img src={programImage} alt="Programm Vorschau" />
-      <WorkoutTitle>Titel des Workouts</WorkoutTitle>
-      <WorkoutTitle>Titel des Programms</WorkoutTitle>
-      <Text>XXX kcal · 26 Min. · Beweglichkeit</Text>
+      <WorkoutTitle>{title}</WorkoutTitle>
+      <WorkoutTitle>{program}</WorkoutTitle>
+      <Text>
+        {kcal} kcal · {minutes} Min. · {type}
+      </Text>
     </div>
   );
 }
