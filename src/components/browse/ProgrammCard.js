@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { ReactComponent as Heart } from '../../images/heart.svg';
 
 const Card = styled.div`
-  background-color: #f5ebdd;
   height: 215px;
   border-radius: 5px;
+  margin-top: 20px;
+  background-color: #f5ebdd;
+  &:last-child {
+    margin-bottom: 25%;
+  }
 `;
 
 const ProgramName = styled.h2`
@@ -22,14 +26,16 @@ const Topbar = styled.div`
   height: 0px;
 `;
 
-function ProgrammCard() {
+function ProgrammCard({ title, color }) {
+  // er loggt die Farben korrekt, sie werden nur nicht dargestellt
+  console.log(color);
   return (
-    <Card>
+    <Card style={{ backgroundColor: { color } }}>
       <Topbar>
         <Heart src={Heart} alt="Herz" />
         <p>Neu</p>
       </Topbar>
-      <ProgramName>Titel des Programms</ProgramName>
+      <ProgramName>{title}</ProgramName>
     </Card>
   );
 }
