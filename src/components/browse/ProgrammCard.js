@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Heart } from '../../images/heart.svg';
 
 const Card = styled.div`
   height: 215px;
   border-radius: 5px;
   margin-top: 20px;
-  background-color: #f5ebdd;
   &:last-child {
     margin-bottom: 25%;
   }
@@ -26,16 +26,22 @@ const Topbar = styled.div`
   height: 0px;
 `;
 
-function ProgrammCard({ title, color }) {
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: rgba(29, 42, 115, 1);
+`;
+
+function ProgrammCard({ title, color, id }) {
   // er loggt die Farben korrekt, sie werden nur nicht dargestellt
-  console.log(color);
   return (
-    <Card style={{ backgroundColor: { color } }}>
-      <Topbar>
-        <Heart src={Heart} alt="Herz" />
-        <p>Neu</p>
-      </Topbar>
-      <ProgramName>{title}</ProgramName>
+    <Card style={{ backgroundColor: color }}>
+      <StyledLink to={{ pathname: '/program', value: id }}>
+        <Topbar>
+          <Heart src={Heart} alt="Herz" />
+          <p>Neu</p>
+        </Topbar>
+        <ProgramName>{title}</ProgramName>
+      </StyledLink>
     </Card>
   );
 }
