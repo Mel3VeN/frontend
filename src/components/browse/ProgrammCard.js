@@ -35,7 +35,7 @@ function ProgrammCard({ title, color, id }) {
   // er loggt die Farben korrekt, sie werden nur nicht dargestellt
   return (
     <Card style={{ backgroundColor: color }}>
-      <StyledLink to={{ pathname: '/program', value: id }}>
+      <StyledLink to={`program/${id}`}>
         <Topbar>
           <Heart src={Heart} alt="Herz" />
           <p>Neu</p>
