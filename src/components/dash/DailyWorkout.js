@@ -21,14 +21,20 @@ const WorkoutTitle = styled.p`
   font-size: 16px;
   line-height: 21px;
 `;
-function DailyWorkout({ title, program, kcal, minutes, type }) {
+
+const Img = styled.img`
+  width: 375px;
+  height: 214px;
+  object-fit: cover;
+`;
+function DailyWorkout({ title, program, kcal, minutes, type, img }) {
   return (
     <div>
       <Wrapper>
         <Subtitle>Dein Workout heute</Subtitle>
         <Text>Trainingsplan</Text>
       </Wrapper>
-      <img src={programImage} alt="Programm Vorschau" />
+      <Img src={img} alt="Programm Vorschau" />
       <WorkoutTitle>{title}</WorkoutTitle>
       <WorkoutTitle>{program}</WorkoutTitle>
       <Text>

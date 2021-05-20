@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Menubar from '../../general/Menubar';
+import Navlink from '../../nav/Navlink';
 
 const Headerbackground = styled.div`
   background: linear-gradient(
@@ -9,24 +11,23 @@ const Headerbackground = styled.div`
     ),
     #ffbe21;
   height: 75vh;
+  position: relative;
 `;
 
 const ProgramName = styled.h1`
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-`;
-
-const Bottombar = styled.div`
-  display: flex;
+  max-width: 300px;
 `;
 
 function Programheader({ title }) {
   return (
     <Headerbackground>
       <ProgramName>{title}</ProgramName>
-      <Bottombar />
+      <Menubar />
     </Headerbackground>
   );
 }
