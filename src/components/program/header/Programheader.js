@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menubar from '../../general/Menubar';
+import Menubar from './Menubar';
 import Navlink from '../../nav/Navlink';
 
 const Headerbackground = styled.div`
@@ -23,11 +23,11 @@ const ProgramName = styled.h1`
   max-width: 300px;
 `;
 
-function Programheader({ title }) {
+function Programheader({ title, difficulty, duration, focus }) {
   return (
     <Headerbackground>
       <ProgramName>{title}</ProgramName>
-      <Menubar />
+      <Menubar difficulty={difficulty} duration={duration} focus={focus} />
     </Headerbackground>
   );
 }
