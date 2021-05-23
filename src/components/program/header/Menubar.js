@@ -13,7 +13,6 @@ const StyledBar = styled.div`
 `;
 
 function Menubar({ difficulty, focus, duration }) {
-  console.log(difficulty);
   return (
     <StyledBar>
       <Genericlink text={difficulty} image={images[3].image} />

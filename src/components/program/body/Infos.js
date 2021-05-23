@@ -5,11 +5,6 @@ const Background = styled.div`
   background-color: #f5ebdd;
 `;
 
-const Wrapper = styled.div`
-  padding-left: 5%;
-  padding-right: 5%;
-`;
-
 const P = styled.p`
   padding: 1rem;
   line-height: 21px;
@@ -18,9 +13,7 @@ const P = styled.p`
 function Infos({ description }) {
   return (
     <Background>
-      <Wrapper>
-        <P>{description}</P>
-      </Wrapper>
+      <P>{description}</P>
     </Background>
   );
 }
