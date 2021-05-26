@@ -31,11 +31,11 @@ const StyledLink = styled(Link)`
   color: rgba(29, 42, 115, 1);
 `;
 
-function ProgrammCard({ title, color, id }) {
+function ProgrammCard({ title, color, id, slug }) {
   // er loggt die Farben korrekt, sie werden nur nicht dargestellt
   return (
     <Card style={{ backgroundColor: color }}>
-      <StyledLink to={{ pathname: '/program', value: id }}>
+      <StyledLink to={`program/${slug}`}>
         <Topbar>
           <Heart src={Heart} alt="Herz" />
           <p>Neu</p>
