@@ -8,6 +8,7 @@ import Programheader from './header/Programheader';
 import { GET_PROGRAM_BY_SLUG } from '../../GraphQL/Queries';
 import Infos from './body/Infos';
 import Split from './body/Aufteilung/Split';
+import { categoryCounter } from '../../Utility/categoryCounter';
 
 function Overview({ match }) {
   const { slug } = match.params;
@@ -17,28 +18,13 @@ function Overview({ match }) {
   if (loading) {
     return <div>loading...</div>;
   }
-  const categories = [];
-  const count = {};
+  // calculate categories
+  const loadedCategories = [];
   data.allProgram[0].workouts.forEach((element) =>
-    categories.push(element.Workout.categories)
+    loadedCategories.push(element.Workout.categories)
   );
-  const flattedCategories = categories.flat();
-  function zumChecken(arr) {
-    let i = 0;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] == count[arr[i]]) {
-        i++;
-      } else {
-        count[arr[i]] = 0;
-      }
-    }
-    for (i = 0; i < arr.length; i++) {
-      count[arr[i]] += 1;
-    }
-    console.log(count);
-  }
-  zumChecken(flattedCategories);
-
+  const categories = categoryCounter(loadedCategories.flat());
+  console.log(categories);
   return (
     <div>
       <Programheader
@@ -48,7 +34,7 @@ function Overview({ match }) {
         duration={data.allProgram[0].duration}
       />
       <Infos description={data.allProgram[0].description} />
-      <Split data={data.allProgram[0].workouts.categories} />
+      <Split data={categories} />
     </div>
   );
 }
