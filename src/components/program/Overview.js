@@ -19,12 +19,27 @@ function Overview({ match }) {
     return <div>loading...</div>;
   }
   // calculate categories
-  const loadedCategories = [];
-  data.allProgram[0].workouts.forEach((element) =>
-    loadedCategories.push(element.Workout.categories)
+  let total = 0;
+  const countedCategories = data.allProgram[0].workouts.reduce(
+    (acc, workout) => {
+      const workoutCategories = workout.Workout.categories;
+      const count = acc;
+      workoutCategories.forEach((category) => {
+        if (count[category] !== undefined) {
+          count[category] += 1;
+          total += 1;
+        } else {
+          count[category] = 1;
+          total += 1;
+        }
+      });
+      return count;
+    },
+    {}
   );
-  const categories = categoryCounter(loadedCategories.flat());
-  console.log(categories);
+
+  console.log(countedCategories);
+
   return (
     <div>
       <Programheader
@@ -34,7 +49,7 @@ function Overview({ match }) {
         duration={data.allProgram[0].duration}
       />
       <Infos description={data.allProgram[0].description} />
-      <Split data={categories} />
+      <Split data={countedCategories} hundred={total} />
     </div>
   );
 }

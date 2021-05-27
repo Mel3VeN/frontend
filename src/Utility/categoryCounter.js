@@ -11,5 +11,6 @@ export function categoryCounter(arr) {
   for (i = 0; i < arr.length; i++) {
     count[arr[i]] += 1;
   }
+
   return count;
 }
