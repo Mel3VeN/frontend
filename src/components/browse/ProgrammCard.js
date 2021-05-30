@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   color: rgba(29, 42, 115, 1);
 `;
 
-function ProgrammCard({ title, color, id, slug }) {
+function ProgrammCard({ title, color, slug }) {
   // er loggt die Farben korrekt, sie werden nur nicht dargestellt
   return (
     <Card style={{ backgroundColor: color }}>

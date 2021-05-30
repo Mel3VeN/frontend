@@ -1,4 +1,3 @@
-import react from 'react';
 import { gql } from '@apollo/client';
 
 export const GET_WORKOUTS = gql`
@@ -47,6 +46,7 @@ export const GET_PROGRAM_BY_SLUG = gql`
         current
       }
       workouts {
+        day
         Workout {
           title
           calories

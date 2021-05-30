@@ -3,16 +3,17 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import styled from 'styled-components';
+
 import Programheader from './header/Programheader';
 import { GET_PROGRAM_BY_SLUG } from '../../GraphQL/Queries';
 import Infos from './body/Infos';
 import Split from './body/Aufteilung/Split';
-import { categoryCounter } from '../../Utility/categoryCounter';
+
+import Schedule from './body/Scheduling/Schedule';
 
 function Overview({ match }) {
   const { slug } = match.params;
-  const { error, loading, data } = useQuery(GET_PROGRAM_BY_SLUG, {
+  const { loading, data } = useQuery(GET_PROGRAM_BY_SLUG, {
     variables: { slug },
   });
   if (loading) {
@@ -38,7 +39,9 @@ function Overview({ match }) {
     {}
   );
 
-  console.log(countedCategories);
+  // Workout days
+
+  const workoutDays = data.allProgram[0].workouts;
 
   return (
     <div>
@@ -50,6 +53,7 @@ function Overview({ match }) {
       />
       <Infos description={data.allProgram[0].description} />
       <Split data={countedCategories} hundred={total} />
+      <Schedule days={workoutDays} />
     </div>
   );
 }

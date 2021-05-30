@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import ProgrammCard from './ProgrammCard';
-import workouts from '../../dummydata/browse-workouts';
 import { GET_PROGRAMMS } from '../../GraphQL/Queries';
 
 const Cardview = () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menubar from './Menubar';
-import Navlink from '../../nav/Navlink';
 
 const Headerbackground = styled.div`
   background: linear-gradient(

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import programImage from '../../images/programmone.png';
 
 const Wrapper = styled.div`
   margin-top: 3.3rem;

@@ -1,4 +1,3 @@
-import react from 'react';
 import styled from 'styled-components';
 import Category from './Category';
 
@@ -10,7 +9,6 @@ const CategoryWrapper = styled.div`
 `;
 
 function Categories({ categories }) {
-  console.log(categories);
   const labels = categories.map((category, index) => (
     <Category key={index} title={category.title} color={category.color} />
   ));

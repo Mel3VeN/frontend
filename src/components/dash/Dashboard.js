@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import DailyWorkout from './DailyWorkout';
 import Navbar from '../nav/Navbar';
 import dashData from '../../dummydata/dash-data';

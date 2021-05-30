@@ -1,4 +1,3 @@
-import react from 'react';
 import styled from 'styled-components';
 import Chart from './Chart';
 import Categories from './Categories';

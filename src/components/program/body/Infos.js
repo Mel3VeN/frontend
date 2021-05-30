@@ -1,4 +1,3 @@
-import react from 'react';
 import styled from 'styled-components';
 
 const Background = styled.div`

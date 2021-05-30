@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProgrammCard from './ProgrammCard';
 import Navbar from '../nav/Navbar';
 import Cardview from './Cardview';
 

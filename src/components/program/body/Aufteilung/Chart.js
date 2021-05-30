@@ -1,4 +1,3 @@
-import react from 'react';
 import ReactSvgPieChart from 'react-svg-piechart';
 import styled from 'styled-components';
 
@@ -22,7 +21,6 @@ function Chart({ categories }) {
     });
     return categories;
   }
-  console.log(setColor());
   return (
     <Wrapper>
       <ReactSvgPieChart data={setColor()} />
