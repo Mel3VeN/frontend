@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Menubar from './Menubar';
+import Button from '../../general/Button';
 
 const Headerbackground = styled.div`
   background: linear-gradient(
@@ -22,10 +24,14 @@ const ProgramName = styled.h1`
   max-width: 300px;
 `;
 
-function Programheader({ title, difficulty, duration, focus }) {
+function Programheader({ title, difficulty, duration, focus, slug }) {
   return (
     <Headerbackground>
       <ProgramName>{title}</ProgramName>
+      <Link to={`${slug}/workout/0`}>
+        <Button>jetzt starten</Button>
+      </Link>
+
       <Menubar difficulty={difficulty} duration={duration} focus={focus} />
     </Headerbackground>
   );

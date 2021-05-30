@@ -50,6 +50,7 @@ function Overview({ match }) {
         difficulty={data.allProgram[0].difficulty}
         focus={data.allProgram[0].focus}
         duration={data.allProgram[0].duration}
+        slug={slug}
       />
       <Infos description={data.allProgram[0].description} />
       <Split data={countedCategories} hundred={total} />

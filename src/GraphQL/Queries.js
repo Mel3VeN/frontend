@@ -57,3 +57,36 @@ export const GET_PROGRAM_BY_SLUG = gql`
     }
   }
 `;
+export const GET_WORKOUT_BY_SLUG = gql`
+  query($slug: String!) {
+    allProgram(where: { slug: { current: { eq: $slug } } }) {
+      title
+      slug {
+        current
+      }
+      workouts {
+        day
+        Workout {
+          title
+          calories
+          categories
+          duration
+          exercises {
+            ... on ExerciseWithReps {
+              reps
+              exercise {
+                title
+              }
+            }
+            ... on ExerciseWithDuration {
+              duration
+              exercise {
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
